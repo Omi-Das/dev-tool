@@ -7,7 +7,7 @@ const Navbar = () => {
     //         Omi Das is a student 
     //     </div>
     //   </div>
-  <div className="navbar bg-base-100 h-10px shadow-sm mx-auto flex justify-between items-center pl-6 pr-6">
+  <div className="navbar bg-base-100 h-10px shadow-sm mx-auto flex justify-between items-center px-50">
   {/* Left Side: Brand Name */}
   <div className="pl-6">
     <a className="text-2xl font-bold text-[#6333FF] cursor-pointer">DigiTools</a>
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   {/* Middle: Navigation Links (Hidden on small screens) */}
   <div className="flex justify-between items-center hidden lg:block">
-    <ul className="menu menu-horizontal px-1 gap-4 font-medium text-gray-600 pl-90">
+    <ul className="menu menu-horizontal px-1 gap-4 font-medium text-gray-600 pl-45">
       <li><a href='/' className="hover:text-[#6333FF]">Products</a></li>
       <li><a href='/' className="hover:text-[#6333FF]">Features</a></li>
       <li><a href='/' className="hover:text-[#6333FF]">Pricing</a></li>
@@ -25,7 +25,7 @@ const Navbar = () => {
   </div>
 
   {/* Right Side: Cart, Login & CTA */}
-  <div className="flex items-center justify-end gap-4 ml-auto"> 
+  <div className="flex items-center justify-end gap-4 ml-auto mr-3"> 
   {/* shooping cart icon*/}
   <div className="dropdown dropdown-end">
     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
