@@ -25,7 +25,7 @@ const Navbar = () => {
   </div>
 
   {/* Right Side: Cart, Login & CTA */}
-  <div className="flex items-center justify-end gap-4 ml-auto mr-3"> 
+  <div className="flex items-center justify-end gap-4 ml-auto mr-3 "> 
   {/* shooping cart icon*/}
   <div className="dropdown dropdown-end">
     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
