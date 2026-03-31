@@ -17,7 +17,7 @@ const Carts = ({ carts, setCarts }) => {
                             <div className="flex items-center justify-between border rounded-lg p-3" key={item.id}>
                                 <div className="flex items-center gap-2">
                                     <img className="h-20 w-20 object-contain" src={item.image} alt={item.title} />
-                                    <h2 className="text-xl font-bold">{item.title}</h2>
+                                    <h2 className="text-xl font-bold">{item.name}</h2>
                                 </div>
 
                                 <div className="flex gap-10">
