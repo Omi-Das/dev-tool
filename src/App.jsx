@@ -7,6 +7,7 @@ import Block from './Block'
 import { useState } from 'react'
 import Artists from './Artists'
 import Carts from './Carts'
+import Footer from './Footer'
 
 const getProducts = async () => {
   const res = await fetch("/cart.json");
@@ -19,7 +20,7 @@ function App() {
  const [carts,setCarts] = useState([]);
   return (
    <div>
- <Navbar></Navbar>
+ <Navbar carts={carts} setCarts={setCarts}></Navbar>
  <Section></Section>
  <Block></Block>
   <div>
@@ -32,7 +33,7 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab rounded-full w-40"
+          className= {`tab rounded-full w-40 ${activeTab === "product" ? "bg-gradient-to-r from-[#4f39f6] to-[#6a629e] text-white" : ""} `}
           aria-label="Products"
           onClick={()=>setactiveTab("product")}
             defaultChecked
@@ -40,7 +41,7 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab rounded-full w-40"
+          className={`tab rounded-full w-40 ${activeTab === "cart" ? "bg-gradient-to-r from-[#4f39f6] to-[#6a629e] text-white" : ""} `}
           aria-label={`Cart (${carts.length})`}
           onClick={()=>setactiveTab("cart")}
         />
@@ -53,6 +54,7 @@ function App() {
     activeTab === "cart" && 
     <Carts carts={carts} setCarts={setCarts}></Carts>
   }
+  <Footer></Footer>
    </div>
   )
 }

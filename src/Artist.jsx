@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { use, useState } from 'react';
 import checkPng from './assets/Check.png'
-const Artist = ({ product }) => {
+const Artist = ({ product, carts, setCarts }) => {
+    const [isAdded, setIsAdded] = useState(false);
+    const handleAddToCart = () => {
+        if (!isAdded) {
+            setCarts([...carts, product]);
+            setIsAdded(true);
+        }
+
+    }
     return (
         <div>
              <div className="card w-full max-w-sm bg-white border border-gray-100 shadow-lg p-6 rounded-3xl relative flex flex-col gap-1 justify-between mx-auto w-[380px] h-[400]">
@@ -46,8 +54,8 @@ const Artist = ({ product }) => {
       </ul>
 
       {/* Buy Now Button */}
-      <button className="w-full bg-gradient-to-r from-[#4f39f6] to-[#6a629e] hover:bg-[#5229d6] text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md active:scale-95">
-        Buy Now
+      <button  onClick={handleAddToCart} className="w-full c hover:bg-[#5229d6] text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md active:scale-95">
+       { isAdded ? "Added to Cart" : "Buy Now"}
       </button>
     </div>
         </div>

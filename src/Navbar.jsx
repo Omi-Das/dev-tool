@@ -1,6 +1,6 @@
 import React from 'react';
 import shoppingCart from './assets/shopping-cart.png';
-const Navbar = () => {
+const Navbar = ({ carts, setCarts }) => {
     return (
     //   <div className="w-[800px]">
     //       <div className='text-center text-white bg-amber-700'>
@@ -33,7 +33,7 @@ const Navbar = () => {
     {/* shopping cart image jate chutu boro na hoi soman rakhlam
      */}
         <img src={shoppingCart} alt="shoppingCart" className="w-6 h-6" />
-           <span class="badge badge-sm indicator-item">0</span>
+           <span class="badge badge-sm indicator-item bg-red-500 text-white rounded-full">{carts.length}</span>
       </div>
     </div>
   </div>
@@ -51,7 +51,6 @@ const Navbar = () => {
 
 </div>
 
-   
     );
 };
 
