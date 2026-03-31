@@ -30,14 +30,16 @@ const Carts = ({ carts, setCarts }) => {
                     <div className="space-y-5 mt-4">
                         {carts.map((item) => (
                             <div className="flex items-center justify-between rounded-lg p-3 bg-[#f4f6f8]" key={item.id}>
-                                <div className="flex items-center ">
-                                    <img className="w-[50px] h-[50px] p-2 rounded-4xl bg-white  object-contain" src={item.icon} alt={item.title} />
+                              <div className='grid grid-cols-2 gap-2 items-center flex'>
+                                  <div className="flex items-center w-[55px] h-[55px] border-amber-50 bg-white  rounded-full">
+                                    <img className="w-[36px] h-[36px] ml-3  object-contain" src={item.icon} alt={item.title} />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-[#101627] font-bold">{item.name}</h2>
                                     <div className="text-[#627382] font-bold">${item.price}</div>
                                 </div>
+                              </div>
                                   <button 
                                         className=" text-red-500"
                                         onClick={() => handleDelete(item.id)}
@@ -53,7 +55,7 @@ const Carts = ({ carts, setCarts }) => {
                     </div>
 
                     <button
-                        className="btn w-full mt-5 bg-gradient-to-r from-[#4f39f6] to-[#6a629e] text-white text-2xl rounded-full"
+                        className="btn w-full mt-5 bg-gradient-to-r from-[#4f39f6] to-blue-400 text-white text-2xl rounded-full"
                         onClick={handlePayment}
                     >
                         Proceed to Checkout
