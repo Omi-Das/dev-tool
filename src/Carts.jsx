@@ -1,7 +1,18 @@
 import React from 'react';
 import shoppingCartPng from './assets/shopping-cart.png'
+import { toast } from 'react-toastify';
 
 const Carts = ({ carts, setCarts }) => {
+    const totalPrice = carts.reduce((sum,item) => sum + item.price,0)
+    const handleDelete = (id) => {
+        const updatedCarts = carts.filter(item => item.id !== id)
+        setCarts(updatedCarts)
+       toast.success("Item removed from cart")
+    }
+    const handlePayment = () => {
+        setCarts([]);
+      toast.success("Payment successful! Thank you for your purchase.")
+    }
 
     return (
         <div className="p-10 max-w-7xl mx-auto">
@@ -9,41 +20,47 @@ const Carts = ({ carts, setCarts }) => {
 
             {carts.length === 0 ? (
                 // <img src={shoppingCartPng} alt="Shopping Cart" />
-                <p className="text-center text-2xl p-5">Cart is empty</p>
+        <div>
+            <p className="text-center text-2xl p-5">Cart is empty</p>
+            <img src={shoppingCartPng} alt="Shopping Cart" className='' />
+
+        </div>
             ) : (
                 <>
                     <div className="space-y-5 mt-4">
                         {carts.map((item) => (
-                            <div className="flex items-center justify-between border rounded-lg p-3" key={item.id}>
-                                <div className="flex items-center gap-2">
-                                    <img className="h-20 w-20 object-contain" src={item.image} alt={item.title} />
-                                    <h2 className="text-xl font-bold">{item.name}</h2>
+                            <div className="flex items-center justify-between rounded-lg p-3 bg-[#f4f6f8]" key={item.id}>
+                                <div className="flex items-center ">
+                                    <img className="w-[50px] h-[50px] p-2 rounded-4xl bg-white  object-contain" src={item.icon} alt={item.title} />
                                 </div>
 
-                                <div className="flex gap-10">
-                                    <div className="text-3xl font-bold">${item.price}</div>
-                                    <button 
-                                        className="btn rounded-full text-red-500"
+                                <div className="flex flex-col gap-2">
+                                    <h2 className="text-[#101627] font-bold">{item.name}</h2>
+                                    <div className="text-[#627382] font-bold">${item.price}</div>
+                                </div>
+                                  <button 
+                                        className=" text-red-500"
+                                        onClick={() => handleDelete(item.id)}
                                     >
                                         Remove
                                     </button>
-                                </div>
                             </div>
                         ))}
                     </div>
-
                     <div className="flex justify-between align-items text-[#627382] p-5 mt-5  text-xl font-bold">
                         <div>Total</div>
-                        <div>0</div>
+                        <div>${totalPrice}</div>
                     </div>
 
                     <button
                         className="btn w-full mt-5 bg-gradient-to-r from-[#4f39f6] to-[#6a629e] text-white text-2xl rounded-full"
+                        onClick={handlePayment}
                     >
                         Proceed to Checkout
                     </button>
                 </>
-            )}
+           )
+            }
         </div>
     );
 };

@@ -8,6 +8,10 @@ import { useState } from 'react'
 import Artists from './Artists'
 import Carts from './Carts'
 import Footer from './Footer'
+import Step from './Step'
+import Workflow from './Workflow'
+import { ToastContainer } from 'react-toastify'
+import Static from './Static'
 
 const getProducts = async () => {
   const res = await fetch("/cart.json");
@@ -54,7 +58,11 @@ function App() {
     activeTab === "cart" && 
     <Carts carts={carts} setCarts={setCarts}></Carts>
   }
+  <Step></Step>
+  <Static></Static>
+  <Workflow></Workflow>
   <Footer></Footer>
+  <ToastContainer></ToastContainer>
    </div>
   )
 }

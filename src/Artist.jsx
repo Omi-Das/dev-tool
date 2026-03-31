@@ -1,13 +1,20 @@
 import React, { use, useState } from 'react';
 import checkPng from './assets/Check.png'
+import { toast } from 'react-toastify';
 const Artist = ({ product, carts, setCarts }) => {
     const [isAdded, setIsAdded] = useState(false);
     const handleAddToCart = () => {
-        if (!isAdded) {
-            setCarts([...carts, product]);
-            setIsAdded(true);
-        }
+    setIsAdded(true);
+          const isFound = carts.find(item => item.id === product.id)
 
+          if(isFound){
+            toast.error("Item already in cart")
+            return;
+          }
+            setCarts([...carts, product]);
+            // setIsAdded(true);
+            toast.success("Item added to cart")
+      
     }
     return (
         <div>
