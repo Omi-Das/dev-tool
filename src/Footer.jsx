@@ -1,5 +1,7 @@
 import React from 'react';
-
+import facebook from './assets/facebook.png';
+import twitter from './assets/fi_5968958.png';
+import instragram from './assets/Instagram.png'
 const Footer = () => {
     return (
         <div >
@@ -9,7 +11,6 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           
-          {/* Brand and Description */}
           <div className="lg:col-span-1">
             <h2 className="text-white text-3xl font-bold mb-6">DigiTools</h2>
             <p className="text-sm leading-relaxed max-w-xs">
@@ -18,7 +19,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Product Links */}
           <div>
             <h3 className="text-white font-semibold mb-6">Product</h3>
             <ul className="space-y-4 text-sm">
@@ -29,7 +29,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Links */}
           <div>
             <h3 className="text-white font-semibold mb-6">Company</h3>
             <ul className="space-y-4 text-sm">
@@ -40,7 +39,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources Links */}
           <div>
             <h3 className="text-white font-semibold mb-6">Resources</h3>
             <ul className="space-y-4 text-sm">
@@ -51,27 +49,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Links */}
           <div>
             <h3 className="text-white font-semibold mb-6">Social Links</h3>
             <div className="flex gap-4">
-              {/* Instagram */}
-              <div className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 cursor-pointer transition">
-                <i className="fa-brands fa-instagram text-white"></i>
+              <div className="w-10 h-10 rounded-full bg-white border border-gray-700 flex items-center justify-center hover:bg-gray-800 cursor-pointer transition">
+                <img src={instragram} alt="Instagram" className="w-5 h-5" />
               </div>
-              {/* Facebook */}
-              <div className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 cursor-pointer transition">
-                <i className="fa-brands fa-facebook-f text-white"></i>
+              <div className="w-10 h-10 rounded-full bg-white border border-gray-700 flex items-center justify-center hover:bg-gray-800 cursor-pointer transition">
+              <img src={facebook} alt="Facebook" className="w-5 h-5" />
               </div>
-              {/* Twitter */}
-              <div className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 cursor-pointer transition">
-                <span className="text-white font-bold text-lg"></span>
+              <div className="w-10 h-10 rounded-full bg-white border border-gray-700 flex items-center justify-center hover:bg-gray-800 cursor-pointer transition">
+              <img src={twitter} alt="Twitter" className="w-5 h-5" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Footer Section */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>© 2026 Digitools. All rights reserved.</p>
           <div className="flex gap-6">
@@ -82,7 +75,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Glowing Border */}
       <div className="h-[4px] w-full bg-gradient-to-r from-[#4F39F6] to-[#A05CFF]"></div>
     </footer>
         </div>

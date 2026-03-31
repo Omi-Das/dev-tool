@@ -40,7 +40,7 @@ const Navbar = ({ carts, setCarts }) => {
   <div className="flex items-center justify-between md:justify-end gap-2 md:gap-4 w-full md:w-auto mt-4 md:mt-0  md:border-t-0 pt-3 md:pt-0"> 
     <div className="indicator ml-2">
       <img src={shoppingCart} alt="shoppingCart" className="w-6 h-6" />
-      <span className={`indicator-item badge badge-sm  bg-red-600 text-white ${carts.length === 0 ? "hidden" : ""}`}>
+      <span className={`indicator-item badge badge-sm bg-red-600 text-white ${carts.length === 0 ? "hidden" : ""}`}>
         {carts.length}
       </span>
     </div>
