@@ -54,7 +54,7 @@ const Artist = ({ product, carts, setCarts }) => {
       </ul>
 
       {/* Buy Now Button */}
-      <button  onClick={handleAddToCart} className="w-full c hover:bg-[#5229d6] text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md active:scale-95">
+      <button  onClick={handleAddToCart} className="w-full bg-gradient-to-r from-[#4f39f6] to-[#6a629e] hover:bg-[#5229d6] text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md active:scale-95">
        { isAdded ? "Added to Cart" : "Buy Now"}
       </button>
     </div>
