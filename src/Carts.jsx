@@ -19,10 +19,10 @@ const Carts = ({ carts, setCarts }) => {
             <h1 className="text-2xl font-bold">Your Cart</h1>
 
             {carts.length === 0 ? (
-                // <img src={shoppingCartPng} alt="Shopping Cart" />
-        <div className='w-[1200px] h-[286px] mx auto border'>
+             
+        <div >
             <p className="text-center text-2xl p-5">Cart is empty</p>
-            <img src={shoppingCartPng} alt="Shopping Cart" className='' />
+            
 
         </div>
             ) : (

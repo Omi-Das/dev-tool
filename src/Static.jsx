@@ -32,52 +32,61 @@ const Static = () => {
         }
     ];
     return (
-         <section className="py-20 px-5 bg-white">
-            <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-                <p className="text-gray-500">Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
-            </div>
+       <section className="py-20 px-5 bg-white">
+    <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+        <p className="text-gray-500">Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+    </div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                {pricingData.map((plan) => (
-                    <div 
-                        key={plan.id} 
-                        className={`relative p-8 rounded-2xl border ${plan.isPopular ? 'bg-[#7C3AED] text-white scale-105 shadow-xl' : 'bg-white border-gray-100 shadow-sm'}`}
-                    >
-                        {plan.isPopular && (
-                            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-200 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full">
-                                Most Popular
-                            </span>
-                        )}
+    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {pricingData.map((plan) => (
+            <div 
+                key={plan.id} 
+                className={`relative p-8 rounded-2xl border flex flex-col justify-between ${
+                    plan.isPopular 
+                    ? 'bg-[#7C3AED] text-white shadow-xl'
+                    : 'bg-white border-gray-100 shadow-sm'
+                }`}
+            >
+                {plan.isPopular && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-200 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                        Most Popular
+                    </span>
+                )}
 
-                        <h3 className="text-2xl font-bold">{plan.name}</h3>
-                        <p className={`text-sm mb-6 ${plan.isPopular ? 'text-purple-100' : 'text-gray-400'}`}>{plan.description}</p>
-                        
-                        <div className="mb-8">
-                            <span className="text-4xl font-bold">${plan.price}</span>
-                            <span className={plan.isPopular ? 'text-purple-100' : 'text-gray-400'}>/Month</span>
-                        </div>
-
-                        <ul className="space-y-4 mb-8">
-                            {plan.features.map((feature, index) => (
-                                <li key={index} className="flex items-center gap-3 text-sm">
-                                    <BiCheck size={18} className={plan.isPopular ? 'text-white' : 'text-green-600'} />
-                                    {feature}
-                                </li>
-                            ))}
-                        </ul>
-
-                        <button className={`w-full py-3 rounded-xl font-bold transition-all ${
-                            plan.isPopular 
-                            ? 'bg-white text-[#7C3AED] hover:bg-gray-100' 
-                            : 'bg-[#7C3AED] text-white hover:bg-purple-700'
-                        }`}>
-                            {plan.buttonText}
-                        </button>
+                <div>
+                    <h3 className="text-2xl font-bold">{plan.name}</h3>
+                    <p className={`text-sm mb-6 ${plan.isPopular ? 'text-purple-100' : 'text-gray-400'}`}>
+                        {plan.description}
+                    </p>
+                    
+                    <div className="mb-8">
+                        <span className="text-4xl font-bold">${plan.price}</span>
+                        <span className={plan.isPopular ? 'text-purple-100' : 'text-gray-400'}>/Month</span>
                     </div>
-                ))}
+
+                    <ul className="space-y-4 mb-8">
+                        {plan.features.map((feature, index) => (
+                            <li key={index} className="flex items-center gap-3 text-sm">
+                                <BiCheck size={18} className={plan.isPopular ? 'text-white' : 'text-green-600'} />
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <button className={`w-full py-3 mt-auto rounded-xl font-bold transition-all ${
+                    plan.isPopular 
+                    ? 'bg-white text-[#7C3AED] hover:bg-gray-100' 
+                    : 'bg-[#7C3AED] text-white hover:bg-purple-700'
+                }`}>
+                    {plan.buttonText}
+                </button>
             </div>
-        </section>
+        ))}
+    </div>
+</section>
+
     );
 };
 
