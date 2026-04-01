@@ -1,5 +1,5 @@
 import React from 'react';
-import shoppingCartPng from './assets/shopping-cart.png'
+import emptyCart from './assets/emptyCart.jpg'
 import { toast } from 'react-toastify';
 
 const Carts = ({ carts, setCarts }) => {
@@ -22,8 +22,7 @@ const Carts = ({ carts, setCarts }) => {
              
         <div >
             <p className="text-center text-2xl p-5">Cart is empty</p>
-            
-
+            <img className="w-[300px] h-[300px] mx-auto " src={emptyCart} alt="Empty Cart" />
         </div>
             ) : (
                 <>

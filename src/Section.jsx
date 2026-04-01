@@ -15,7 +15,7 @@ const Section = () => {
       </div>
 
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6">
-        Supercharge Your <br className="hidden md:block" /> Digital Workflow
+        Supercharge Your <br className="hidden md:block" /> <span className="font-bold bg-gradient-to-r from-[#6333FF] to-[#A855F7] bg-clip-text text-transparent">Digital Workflow</span>
       </h1>
 
       <p className="text-gray-500 text-lg mb-4 max-w-lg">
